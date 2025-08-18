@@ -110,7 +110,7 @@ body {
     font-size: 96px !important;
     font-weight: 500;
     font-style: italic;
-    background-color: rgba(173, 216, 230, 0.3);
+    background-color: rgba(236, 72, 153, 0.3);
     padding: 3rem 2rem;
     margin: 0;
     text-align: left;
@@ -140,7 +140,7 @@ body {
     font-family: 'Arial', sans-serif;
     font-size: 1rem;
     line-height: 1.6;
-    background-color: rgba(173, 216, 230, 0.3);
+    background-color: rgba(236, 72, 153, 0.3);
     padding: 2rem;
     margin: 0;
 }
@@ -166,7 +166,7 @@ body {
 
 .prototype-content {
     padding: 2rem;
-    background-color: #011B33;
+    background-color: #E91E63;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -261,7 +261,7 @@ body {
 
 /* ===== INDIVIDUAL ARROW BUTTONS ===== */
 .carousel-arrow {
-    background-color: #012545;          /* Dark brown background */
+    background-color: #FCE4EC;          /* Dark brown background */
     color: white;                        /* White arrow color */
     border: none;
     width: 40px;                         /* 50px circular button */
