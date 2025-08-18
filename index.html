@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chidinma N.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="book-container">
+        <!-- Book spine with gradient technique -->
+        <div class="book-spine"></div>
+        
+        <!-- Left page -->
+        <div class="left-page">
+            <h1 class="name">Chidinma N.</h1>
+            <p class="pronunciation">Hello! I'm Chidinma pronounced as <em>chee-dee-mah</em>.</p>
+            <p class="about-me">A typical work day for me includes drinking water, hitting the gym and creating intuitive product experiences that provide value to stakeholders and while prioritising users needs.</p>
+            
+            <div class="links">
+                <a href="#" class="link" id="more-about-me">More about me</a>
+                <a href="mailto:chinwogbo@gmail.com" class="link">Email</a>
+                <a href="https://thingsdeyhappen.substack.com/" class="link external-link">Blog</a>
+            </div>
+
+            <div class="about-content" id="about-content">
+                <p>1. As November was coming to a close, I was born in Lagos, Nigeria. I am the first of 5. I grew up between Lagos and Abuja.</p>
+                <p>2. I work as a Product Designer. I have worked full time with Qonto, Delivery Hero, Paystack, Softcom and independently with Toptal.</p>
+                <p>3. I love words and language. I write a light-hearted newsletter where I chronicle tits and bits of my life.</p>
+                <p>4. I've been living in Berlin for a little over 2 years.</p>
+            </div>
+
+            <img src="Group.png" alt="Chidinma Nwogbo" class="profile-image">
+        </div>
+        
+        <!-- Right page -->
+        <div class="right-page">
+            <a href="project-detail.html" class="work-link">
+                <div class="work-section">
+                    <h2 class="work-title">Delivery Hero</h2>
+                    <div class="work-content delivery-hero">
+                        Delivery Hero operates food delivery services that connects restaurants, customers, and delivery partners across multiple markets. I led the design for vendor management systems, focusing on order fulfillment, operational efficiency, and restaurant-to-customer journey optimization.
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://paystack-project.netlify.app/" class="work-link" target="_blank">
+                <div class="work-section">
+                    <h2 class="work-title">Paystack</h2>
+                    <div class="work-content paystack">
+                        Paystack is Stripe's payment processor for Africa, handling over 50% of online payments in Nigeria. I led design efforts for 0→1 the offline payment solution, Terminal and other products such as SSO, Commerce, checkout and helped build Pax, Paystack's design system.
+                    </div>
+                </div>
+            </a>
+
+            <a href="project-detail.html" class="work-link">
+                <div class="work-section">
+                    <h2 class="work-title">Qonto</h2>
+                    <div class="work-content qonto">
+                        Qonto provides business banking and financial management solutions for SMEs across Europe. I led design direction for pricing and billing experiences, focusing on reducing churn and improving add-on adoption through strategic UX improvements
+                    </div>
+                </div>
+            </a>
+
+            <a href="project-detail.html" class="work-link">
+                <div class="work-section">
+                    <h2 class="work-title">Softcom</h2>
+                    <div class="work-content softcom">
+                        Softcom builds technology solutions for governments, businesses, and educational institutions. I led design direction for government-scale platforms including NPower (recruitment management for 500,000+ participants) and Koya (learning management system serving multiple universities)
+                    </div>
+                </div>
+            </a>
+
+            <!-- Email contact section -->
+            <div class="email-section">
+                <div class="wavy-line"></div>
+                <a href="mailto:chinwogbo@gmail.com" class="email-link">
+                    <div class="email">chinwogbo@gmail.com</div>
+                </a>
+                <div class="email-note">Best reached via email</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('more-about-me').addEventListener('click', function(e) {
+            e.preventDefault();
+            const aboutContent = document.getElementById('about-content');
+            const profileImage = document.querySelector('.profile-image');
+            
+            if (aboutContent.classList.contains('show')) {
+                // Hide content and show image
+                aboutContent.classList.remove('show');
+                profileImage.style.display = 'block';
+                this.textContent = 'More about me';
+            } else {
+                // Show content and hide image
+                aboutContent.classList.add('show');
+                profileImage.style.display = 'none';
+                this.textContent = 'Less about me';
+            }
+        });
+    </script>
+</body>
+</html>

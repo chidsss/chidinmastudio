@@ -1,0 +1,306 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #F4F4F4;
+    color: #000;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.book-container {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-top: 2vh;
+    padding-left: 2%;
+}
+
+/* Book spine - using gradient technique */
+.book-spine {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 80px;
+    transform: translateX(-50%);
+    z-index: 1;
+    background: linear-gradient(
+        to right,
+        transparent 0%,
+        rgba(0,0,0,0.05) 20%,
+        rgba(0,0,0,0.1) 35%,
+        rgba(0,0,0,0.2) 45%,
+        rgba(0,0,0,0.3) 50%,
+        rgba(0,0,0,0.2) 55%,
+        rgba(0,0,0,0.1) 65%,
+        rgba(0,0,0,0.05) 80%,
+        transparent 100%
+    );
+}
+
+/* Left page content */
+.left-page {
+    position: fixed;
+    width: 45%;
+    padding-left: 0.5%;
+    z-index: 1;
+    top: 2vh;
+    left: 2%;
+}
+
+/* Right page content */
+.right-page {
+    position: relative;
+    width: 45%;
+    padding-left: 0.5%;
+    z-index: 1;
+    margin-left: 50%;
+}
+
+.name {
+    font-family: 'Romie Trial', 'Times New Roman', serif;
+    font-size: 3.5rem;
+    font-weight: 500;
+    font-style: italic;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+}
+
+.pronunciation {
+    font-family: 'Arial', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+}
+
+.about-me {
+    font-family: 'Arial', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+    max-width: 400px;
+}
+
+.about-content {
+    font-family: 'Arial', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    max-width: 400px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+    display: none;
+}
+
+.about-content.show {
+    opacity: 1;
+    transform: translateY(0);
+    display: block;
+}
+
+.about-content p {
+    margin-bottom: 1rem;
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.about-content.show p:nth-child(1) { animation-delay: 0.1s; }
+.about-content.show p:nth-child(2) { animation-delay: 0.2s; }
+.about-content.show p:nth-child(3) { animation-delay: 0.3s; }
+.about-content.show p:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.links {
+    margin-bottom: 2rem;
+}
+
+.link {
+    display: inline-block;
+    margin-right: 2rem;
+    margin-bottom: 0.5rem;
+    color: #000;
+    text-decoration: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: #333;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 1px;
+    transition: text-decoration-color 0.3s ease;
+}
+
+.link:hover {
+    text-decoration-color: #FF597A;
+}
+
+.external-link {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0;
+}
+
+.external-link::after {
+    content: '';
+    font-size: 0.8rem;
+    line-height: 1;
+    margin-left: 0.05rem;
+    vertical-align: baseline;
+}
+
+.profile-image {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    margin-top: 2rem;
+    margin-left: -30px;
+}
+
+.work-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    margin-bottom: 1rem;
+    margin-left: 3rem;
+}
+
+.work-link:nth-child(2) {
+    margin-left: 22rem;
+}
+
+.work-link:nth-child(4) {
+    margin-left: 22rem;
+}
+
+.work-link:hover .work-section {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.work-section {
+    border: 1px solid #000;
+    overflow: hidden;
+    max-width: 280px;
+    transition: all 0.3s ease;
+}
+
+.work-title {
+    font-family: 'Romie Trial', 'Times New Roman', serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-style: italic;
+    padding: 0.5rem 1rem;
+    background-color: white;
+    border-bottom: 1px solid #000;
+}
+
+.work-content {
+    padding: 1.5rem;
+    font-family: 'Arial', sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.delivery-hero {
+    background-color: rgba(255, 192, 203, 0.3);
+}
+
+.paystack {
+    background-color: rgba(173, 216, 230, 0.3);
+}
+
+.qonto {
+    background-color: rgba(221, 160, 221, 0.3);
+}
+
+.softcom {
+    background-color: rgba(144, 238, 144, 0.3);
+}
+
+.email-section {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    margin-left: 12rem;
+    max-width: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wavy-line {
+    height: 2px;
+    margin-bottom: 2rem;
+    position: relative;
+    width: 100%;
+}
+
+.wavy-line::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 6'%3E%3Cpath d='M0,3 Q10,1 20,3 T40,3 T60,3 T80,3 T100,3' stroke='%23B1B1B1' stroke-width='2' fill='none'/%3E%3C/svg%3E") repeat-x;
+    background-size: 15px 6px;
+}
+
+.email-link {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+.email-link:hover {
+    color: #FF597A;
+}
+
+.email {
+    font-family: 'Romie Trial', 'Times New Roman', serif;
+    font-size: 48px;
+    font-weight: 500;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.email-note {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    color: #555555;
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .name {
+        font-size: 2.5rem;
+    }
+    
+    .pronunciation {
+        font-size: 1rem;
+    }
+    
+    .left-page, .right-page {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .work-content {
+        margin-left: 0;
+    }
+}
