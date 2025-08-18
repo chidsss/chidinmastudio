@@ -1,3 +1,31 @@
+@font-face {
+    font-family: 'Romie Trial';
+    src: url('RomieTrial-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Romie Trial';
+    src: url('RomieTrial-Medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Romie Trial';
+    src: url('RomieTrial-Italic.otf') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Romie Trial';
+    src: url('RomieTrial-MediumItalic.otf') format('opentype');
+    font-weight: 500;
+    font-style: italic;
+}
+
 * {
     margin: 0;
     padding: 0;
