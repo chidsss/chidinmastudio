@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paystack - Project Detail</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="project-styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <nav class="navigation">
+            <a href="https://chidinmastudio.netlify.app/" class="back-link">Back to home</a>
+        </nav>
+
+        <!-- Project Title Section with Tags -->
+        <section class="project-title">
+            <div class="tags">
+                <span class="tag">B2B2C</span>
+                <span class="tag">Fintech</span>
+                <span class="tag">Mobile</span>
+                <span class="tag">Web</span>
+            </div>
+            <h1>Paystack</h1>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section">
+            <h2>About</h2>
+            <p>Paystack is Stripe's payment processor for Africa, handling over 50% of online payments in Nigeria. I led design efforts for 0→1 the offline payment solution, Terminal and other products such as SSO, Commerce, checkout and helped build Pax, Paystack's design system.</p>
+        </section>
+
+        <!-- Prototype Section -->
+        <section class="prototype-section">
+            <h2>Terminal</h2>
+            <div class="prototype-content">
+                <div class="video-container">
+                    <video controls class="prototype-video active" id="video1">
+                        <source src="Screen Recording 2024-07-02 at 01.58.24 (1).mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    
+                    <video controls class="prototype-video" id="video3">
+                        <source src="Screen Recording 2024-07-04 at 20.31.35.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <video controls class="prototype-video" id="video4">
+                        <source src="Screen Recording 2024-08-12 at 22.47.13.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <img src="POS.png" alt="POS Interface" class="prototype-image" id="image1">
+                    <img src="POS channels.png" alt="POS Channels" class="prototype-image" id="image2">
+                    <img src="POS success.png" alt="POS Success" class="prototype-image" id="image3">
+                    
+                    <div class="carousel-arrows">
+                        <button class="carousel-arrow" onclick="previousItem()" id="prevBtn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16 4L8 12L16 20" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </button>
+                        <button class="carousel-arrow" onclick="nextItem()" id="nextBtn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8 4L16 12L8 20" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Design System Section -->
+        <section class="prototype-section">
+            <h2>Pax Design System</h2>
+            <div class="prototype-content">
+                <div class="video-container">
+                    <!-- Pax Design System Assets -->
+                    <img src="0e3ed6dd-ddc6-4524-891b-66dd58a3d299.png" alt="Pax Design System" class="prototype-image" id="pax-image1">
+                    <img src="16ed6f22-4d4a-411a-8ddc-222d4ad90597.png" alt="Pax Design System" class="prototype-image" id="pax-image2">
+                    <img src="739f2317-2ee4-4159-a565-1836bf9ddf28.png" alt="Pax Design System" class="prototype-image" id="pax-image3">
+                    <img src="b50c231a-906d-4f66-b5e0-23475ae19180.png" alt="Pax Design System" class="prototype-image" id="pax-image4">
+                    <img src="f48dcc4b-3c25-4dbd-80d7-d4b9e31c31c9.png" alt="Pax Design System" class="prototype-image" id="pax-image5">
+                    
+                    <div class="carousel-arrows">
+                        <button class="carousel-arrow" onclick="previousPaxItem()" id="pax-prevBtn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16 4L8 12L16 20" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </button>
+                        <button class="carousel-arrow" onclick="nextPaxItem()" id="pax-nextBtn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8 4L16 12L8 20" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        let currentItem = 1;
+        const totalItems = 6; // 3 videos + 3 images
+
+        function showItem(itemNumber) {
+            console.log('Showing item:', itemNumber);
+            
+            // Hide all videos and images
+            const videos = document.querySelectorAll('.prototype-video');
+            const images = document.querySelectorAll('.prototype-image');
+            
+            videos.forEach(video => {
+                video.classList.remove('active');
+                video.style.display = 'none';
+            });
+            
+            images.forEach(image => {
+                image.classList.remove('active');
+                image.style.display = 'none';
+            });
+            
+            // Show selected item
+            let selectedItem;
+            if (itemNumber <= 3) {
+                // It's a video - map to correct video IDs
+                let videoId;
+                if (itemNumber === 1) videoId = 'video1';
+                else if (itemNumber === 2) videoId = 'video3';
+                else if (itemNumber === 3) videoId = 'video4';
+                selectedItem = document.getElementById(videoId);
+            } else {
+                // It's an image
+                selectedItem = document.getElementById('image' + (itemNumber - 3));
+            }
+            
+            if (selectedItem) {
+                selectedItem.classList.add('active');
+                selectedItem.style.display = 'block';
+                console.log('Item found and displayed:', selectedItem.id);
+            } else {
+                console.error('Item not found for number:', itemNumber);
+            }
+            
+            // Update current item index
+            currentItem = itemNumber;
+            
+            // Update arrow button states
+            updateArrowButtons();
+        }
+
+        function nextItem() {
+            const next = currentItem === totalItems ? 1 : currentItem + 1;
+            showItem(next);
+        }
+
+        function previousItem() {
+            const prev = currentItem === 1 ? totalItems : currentItem - 1;
+            showItem(prev);
+        }
+
+        function updateArrowButtons() {
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            
+            // Enable/disable buttons based on current position
+            prevBtn.disabled = false;
+            nextBtn.disabled = false;
+        }
+
+        // Pax Design System Carousel
+        let currentPaxItem = 1;
+        const totalPaxItems = 5; // 5 Pax images
+
+        function showPaxItem(itemNumber) {
+            console.log('Showing Pax item:', itemNumber);
+            
+            // Hide all Pax images
+            const paxImages = document.querySelectorAll('#pax-image1, #pax-image2, #pax-image3, #pax-image4, #pax-image5');
+            
+            paxImages.forEach(image => {
+                image.classList.remove('active');
+                image.style.display = 'none';
+            });
+            
+            // Show selected Pax item
+            const selectedPaxItem = document.getElementById('pax-image' + itemNumber);
+            
+            if (selectedPaxItem) {
+                selectedPaxItem.classList.add('active');
+                selectedPaxItem.style.display = 'block';
+                console.log('Pax item found and displayed:', selectedPaxItem.id);
+            } else {
+                console.error('Pax item not found for number:', itemNumber);
+            }
+            
+            // Update current Pax item index
+            currentPaxItem = itemNumber;
+        }
+
+        function nextPaxItem() {
+            const next = currentPaxItem === totalPaxItems ? 1 : currentPaxItem + 1;
+            showPaxItem(next);
+        }
+
+        function previousPaxItem() {
+            const prev = currentPaxItem === 1 ? totalPaxItems : currentPaxItem - 1;
+            showPaxItem(prev);
+        }
+
+        // Initialize both carousels when page loads
+        window.addEventListener('load', function() {
+            // Initialize Terminal carousel
+            showItem(1);
+            console.log('Terminal carousel loaded, showing item 1');
+            
+            // Initialize Pax carousel
+            showPaxItem(1);
+            console.log('Pax carousel loaded, showing item 1');
+        });
+    </script>
+</body>
+</html>
