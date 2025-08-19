@@ -178,15 +178,16 @@ body {
 }
 
 .prototype-image {
-    width: 100%;
-    max-width: 800px;
+    max-width: 60%;
+    max-height: 300px;
     border-radius: 8px;
     display: none;
     opacity: 0;
     transition: opacity 0.3s ease;
-    height: auto;  /* Fixed height */
+    height: auto;
     object-fit: contain;
-    margin: 0 auto;  /* Center the images */
+    margin: 0 auto;
+    border: 3px solid red;
 }
 
 
