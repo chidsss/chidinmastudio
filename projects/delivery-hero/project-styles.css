@@ -166,7 +166,7 @@ body {
 
 .prototype-content {
     padding: 2rem;
-    background-color: #E21B70;
+    background-color: #E21B70; /* Deep pink for content sections */
     display: flex;
     flex-direction: column;
     align-items: center;
