@@ -207,7 +207,7 @@ body {
 
 .prototype-image {
     width: 100%;
-    max-width: 100%;
+    max-width: 800px;
     border-radius: 8px;
     display: none;
     opacity: 0;
