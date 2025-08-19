@@ -179,14 +179,14 @@ body {
 
 .prototype-image {
     width: 100%;
-    max-width: 140%;
+    max-width: 120%;
     border-radius: 8px;
     display: none;
     opacity: 0;
     transition: opacity 0.3s ease;
     height: auto;  /* Fixed height */
     object-fit: contain;
-    margin: 0 -10%;  /* Center the images */
+    margin: 0 auto;  /* Center the images */
 }
 
 
