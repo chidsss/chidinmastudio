@@ -166,7 +166,7 @@ body {
 
 .prototype-content {
     padding: 2rem;
-    background-color: #E21B70; /* Deep pink for content sections */
+    background-color: rgba(166, 138, 255, 1); /* Deep pink for content sections */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -261,7 +261,7 @@ body {
 
 /* ===== INDIVIDUAL ARROW BUTTONS ===== */
 .carousel-arrow {
-    background-color: #CE075C;          /* Dark brown background */
+    background-color: rgba(137, 109, 226, 1);          /* Dark brown background */
     color: white;                        /* White arrow color */
     border: none;
     width: 40px;                         /* 50px circular button */
@@ -344,3 +344,4 @@ body {
         flex-wrap: wrap;
     }
 }
+
