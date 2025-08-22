@@ -69,11 +69,14 @@
             <h2>Transaction table</h2>
             <div class="prototype-content delivery-hero">
                 <div class="video-container">
-        <video controls class="prototype-video active" id="video2">
-    <source src="Transaction table mobile.mp4" type="video/mp4">
-    <source src="Transaction table web.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-</video>
+                    <video controls class="prototype-video active" id="video2">
+                        <source src="Transaction table mobile.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <video controls class="prototype-video" id="video3">
+                        <source src="Transaction table web.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                     
                     <div class="carousel-arrows">
                         <button class="carousel-arrow" onclick="previousPaxItem()" id="pax-prevBtn">
@@ -159,28 +162,28 @@
 
         // Pax Design System Carousel
         let currentPaxItem = 1;
-        const totalPaxItems = 5; // 5 Pax images
+        const totalPaxItems = 2; // 2 videos
 
         function showPaxItem(itemNumber) {
             console.log('Showing Pax item:', itemNumber);
             
-            // Hide all Pax images
-            const paxImages = document.querySelectorAll('#pax-image1, #pax-image2, #pax-image3, #pax-image4, #pax-image5');
+            // Hide all Pax videos
+            const paxVideos = document.querySelectorAll('#video2, #video3');
             
-            paxImages.forEach(image => {
-                image.classList.remove('active');
-                image.style.display = 'none';
+            paxVideos.forEach(video => {
+                video.classList.remove('active');
+                video.style.display = 'none';
             });
             
-            // Show selected Pax item
-            const selectedPaxItem = document.getElementById('pax-image' + itemNumber);
+            // Show selected Pax video
+            const selectedPaxVideo = document.getElementById('video' + (itemNumber + 1));
             
-            if (selectedPaxItem) {
-                selectedPaxItem.classList.add('active');
-                selectedPaxItem.style.display = 'block';
-                console.log('Pax item found and displayed:', selectedPaxItem.id);
+            if (selectedPaxVideo) {
+                selectedPaxVideo.classList.add('active');
+                selectedPaxVideo.style.display = 'block';
+                console.log('Pax video found and displayed:', selectedPaxVideo.id);
             } else {
-                console.error('Pax item not found for number:', itemNumber);
+                console.error('Pax video not found for number:', itemNumber);
             }
             
             // Update current Pax item index
