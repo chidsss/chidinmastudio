@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Softcom - Project Detail</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="project-styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <nav class="navigation">
+            <a href="../../index.html" class="back-link">Back to home</a>
+        </nav>
+
+        <!-- Project Title Section with Tags -->
+        <section class="project-title title-block softcom">
+            <div class="tags">
+                <span class="tag">B2B</span>
+                <span class="tag">Agency</span>
+                <span class="tag">Mobile</span>
+                <span class="tag">Web</span>
+            </div>
+            <h1>Softcom</h1>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section">
+            <h2>About</h2>
+            <p>Softcom builds technology solutions for governments, businesses, and educational institutions. I led design direction for government-scale platforms including NPower (recruitment management for 500,000+ participants) and Koya (learning management system serving multiple universities).</p>
+        </section>
+
+        <!-- Prototype Section -->
+        <section class="prototype-section">
+            <h2>Prototype</h2>
+            <div class="prototype-content softcom">
+                <div class="video-container">
+                    <video controls class="prototype-video active" id="video1">
+                        <source src="softcom-prototype.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    
+                    <img src="softcom-image-1.png" alt="Softcom Platform Overview" class="prototype-image" id="image1">
+                    <img src="softcom-image-2.png" alt="Softcom User Interface" class="prototype-image" id="image2">
+                    <img src="softcom-image-3.png" alt="Softcom Mobile Experience" class="prototype-image" id="image3">
+                    
+                    <div class="carousel-arrows">
+                        <button class="carousel-arrow" onclick="previousItem()" id="prevBtn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16 4L8 12L16 20" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </button>
+                        <button class="carousel-arrow" onclick="nextItem()" id="nextBtn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8 4L16 12L8 20" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        let currentItem = 1;
+        const totalItems = 4; // 1 video + 3 images
+
+        function showItem(itemNumber) {
+            console.log('Showing item:', itemNumber);
+            
+            // Hide all videos and images
+            const videos = document.querySelectorAll('.prototype-video');
+            const images = document.querySelectorAll('.prototype-image');
+            
+            videos.forEach(video => {
+                video.classList.remove('active');
+                video.style.display = 'none';
+            });
+            
+            images.forEach(image => {
+                image.classList.remove('active');
+                image.style.display = 'none';
+            });
+            
+            // Show selected item
+            let selectedItem;
+            if (itemNumber === 1) {
+                // It's the video
+                selectedItem = document.getElementById('video1');
+            } else {
+                // It's an image
+                selectedItem = document.getElementById('image' + (itemNumber - 1));
+            }
+            
+            if (selectedItem) {
+                selectedItem.classList.add('active');
+                selectedItem.style.display = 'block';
+                console.log('Item found and displayed:', selectedItem.id);
+            } else {
+                console.error('Item not found for number:', itemNumber);
+            }
+            
+            // Update current item index
+            currentItem = itemNumber;
+            
+            // Update arrow button states
+            updateArrowButtons();
+        }
+
+        function nextItem() {
+            const next = currentItem === totalItems ? 1 : currentItem + 1;
+            showItem(next);
+        }
+
+        function previousItem() {
+            const prev = currentItem === 1 ? totalItems : currentItem - 1;
+            showItem(prev);
+        }
+
+        function updateArrowButtons() {
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            
+            // Enable/disable buttons based on current position
+            prevBtn.disabled = false;
+            nextBtn.disabled = false;
+        }
+
+        // Initialize carousel when page loads
+        window.addEventListener('load', function() {
+            showItem(1);
+            console.log('Softcom carousel loaded, showing item 1');
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
